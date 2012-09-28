@@ -1,0 +1,27 @@
+function ${entityName}Register() {
+
+     // get the form values
+     var companyName = $('#companyName').val();
+
+     $.ajax({
+     	type: "POST",
+
+     	url: "userRegister.html",
+
+     	data: "companyName=" + companyName,
+
+     	success: function(response){
+
+     		alert("feito");
+
+     	},
+
+     	error: function(e){
+
+     		alert('Error: ' + e);
+
+     	}
+
+     });
+
+ }

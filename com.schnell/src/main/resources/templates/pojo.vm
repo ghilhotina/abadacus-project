@@ -1,0 +1,17 @@
+public class $entityMetaData.getEntityName() {
+
+#foreach ($attribute in $entityMetaData.getEntityAttributes())
+	public $attribute.getAttributeType() $attribute.getAttributeName();
+#end
+
+#foreach ($attribute in $entityMetaData.getEntityAttributes())
+	#set ( $attributeNameFirstToUpperCase = $attribute.getAttributeName().substring(0,1).toUpperCase().concat($attribute.getAttributeName().substring(1, $attribute.getAttributeName().length())) )
+	public $attribute.getAttributeType() get$attributeNameFirstToUpperCase() {
+		return $attribute.getAttributeName();
+	}  
+	public void set$attributeNameFirstToUpperCase($attribute.getAttributeType() $attribute.getAttributeName()) {
+		this.$attribute.getAttributeName() = $attribute.getAttributeName();
+	}
+	
+#end     
+}

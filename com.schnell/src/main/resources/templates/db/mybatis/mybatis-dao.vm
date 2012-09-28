@@ -1,0 +1,16 @@
+#set ( $entityNameFirstToLowerCase = $entityName.substring(0,1).toLowerCase().concat($entityName.substring(1, $entityName.length())) )
+
+package com.projeto.persistence;
+
+import com.projeto.persistence.vo.Login;
+
+public interface ${entityName}Dao {
+	
+	public Long insert${entityName}(${entityName} ${entityNameFirstToLowerCase});
+	
+	public boolean update${entityName}(${entityName} ${entityNameFirstToLowerCase});
+	
+	public boolean select${entityName}(${entityName} ${entityNameFirstToLowerCase});
+	
+	public boolean delete${entityName}(${entityName} ${entityNameFirstToLowerCase});
+}
